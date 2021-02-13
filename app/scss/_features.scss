@@ -1,0 +1,57 @@
+.features{
+  background-color: $lightGrayishBlue;
+  &__wrapper{
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  
+
+  &__descr{
+    max-width: 650px;
+    margin-bottom: 2.75rem;
+  }
+ 
+  .feature{
+    padding: 0.9375rem;
+    // border:1px solid magenta;
+    @include breakpoint-down(medium) {
+      text-align: center;
+
+    }
+
+    @include breakpoint-up(medium) {
+      flex:0 0 50%;
+    }
+
+    @include breakpoint-up(large) {
+      flex:1;
+    }
+
+    &__title{
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      @include breakpoint-up(large) {
+        font-size: 1.5rem;
+      margin-bottom: 1.125rem;
+
+      }
+    }
+
+    &__img{
+
+      margin-bottom: 1.175rem;
+      @include breakpoint-up(large) {
+        margin-bottom: 1.25rem;
+
+      }
+    }
+
+    &__descr{
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+  }
+}

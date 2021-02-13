@@ -1,0 +1,108 @@
+.footer{
+  background-color:$darkBlue;
+  a{color: #fff;}
+  padding: 2.5rem ;
+
+  @include breakpoint-down(medium) {
+    text-align: center;
+  }
+
+  @include breakpoint-up(large){
+    .container-w{
+      display: grid;
+      grid-template-columns: 3fr 2fr 2fr 5fr;
+      grid-template-rows: repeat ( 2, 1fr);
+      grid-template-areas: "logo links1 links2 cta"
+                            "social links1 links2 cta";
+
+    }
+  }
+ 
+
+  
+
+
+ 
+  &__logo{
+    margin-bottom: 1.375rem ;
+    display: block;
+    @include breakpoint-up(large) {
+      grid-area: logo;
+    }
+  }
+
+  &__social{
+    padding: 5px 0 ;
+    margin-bottom: 1.35rem ;
+    a{
+      display: inline-block;
+      padding: 5px;
+
+       svg path {
+        transition: all .3s;
+        }
+
+      &:hover svg path {
+        fill:$limeGreen;
+      }
+      
+    }
+    @include breakpoint-up(large) {
+      grid-area: social;
+    margin-bottom: 0;
+    align-self: end;
+
+
+    }
+  }
+
+  &__links{
+    font-size: 0.9375rem; 
+    display: flex;
+    flex-direction: column;
+    a{
+    transition: all .3s;
+    padding: 5px 0;
+    }
+    a:hover{
+      color:$limeGreen;
+
+    }
+   
+    &.col2{
+      @include breakpoint-down(medium) {
+        margin-bottom: 2rem;
+      }
+    }
+   
+    
+    @include breakpoint-up(large) {
+      &.col1{
+        grid-area: links1;
+        align-self: stretch;
+
+      }
+      &.col2{
+        grid-area: links2;
+      }
+    }
+  }
+
+  &__button{
+
+    margin-bottom: 1rem;
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      text-align: right;
+    }
+  }
+  &__copyright{
+    font-size: 0.9375rem; 
+
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      text-align: right;
+      align-self: end;
+    }
+  }
+} 
